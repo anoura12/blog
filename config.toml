@@ -3,3 +3,6 @@ languageCode = "en-us"
 title = "The Think Tank"
 theme = "hugo-notepadium"
 publishDir = "docs"
+
+[params]
+style = "dark"
