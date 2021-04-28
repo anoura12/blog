@@ -1,0 +1,26 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Think Tank</title>
+    <link>https://anoura12.github.io/blog/</link>
+    <description>Recent content on The Think Tank</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Apr 2021 12:08:26 +0530</lastBuildDate>
+    
+        <atom:link href="https://anoura12.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://anoura12.github.io/blog/posts/introduction/</link>
+      <pubDate>Wed, 28 Apr 2021 12:08:26 +0530</pubDate>
+      
+      <guid>https://anoura12.github.io/blog/posts/introduction/</guid>
+      <description>&lt;h3 id=&#34;hey-everyone&#34;&gt;Hey everyone!&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;m Anoushka Ramesh and welcome to my blog! I always fantasized about having my own blog but never really got down to doing it until now. This would be a designated space to pen down my thoughts and ideas which usually come up in random spurts. But to give you an idea, they&amp;rsquo;ll revolve around my college life (or whatever&amp;rsquo;s left of it at this time of the pandemic), technology, art, books or sometimes, just old-fashioned life advice.&lt;/p&gt;
+&lt;p&gt;Either way, I do hope you&amp;rsquo;ll stick around to hear some perspective on life from a 19 year old&amp;rsquo;s mind. Happy reading!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
