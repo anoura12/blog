@@ -2,7 +2,8 @@ baseURL = "https://anoura12.github.io/blog"
 languageCode = "en-us"
 title = "The Think Tank"
 theme = "hugo-notepadium"
-publishDir = "docs"
 
 [params]
 style = "dark"
+
+publishDir = "docs"
