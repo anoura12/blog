@@ -22,7 +22,7 @@ AutSPACEs is developed using Python over a Django framework. It is connected to 
 
 ![How AutSPACEs Works](Citscicartoon.png)
 
-The project is currently in its early stages with the immediate goal of creating an MVP or minimum viable product of the site. I’m really looking forward to helping the team achieve this!
+The project is currently in its early stages with the immediate goal of creating an MVP or a minimum viable product of the site. I’m really looking forward to helping the team achieve this!
 
 My Google Summer of Code journey took off with the community bonding period. Right after my first interaction with my mentors, Kirstie Whitaker and Lotty Coupat, and the autistic community along with project lead, Georgia Aitkenhead and head developer, James Kim, I was absolutely delighted to be a part of this amazing team. The meetups and the community calls provide a really lively atmosphere to share ideas and collaborate with the moderators and the dev team to reach viable solutions. 
 
