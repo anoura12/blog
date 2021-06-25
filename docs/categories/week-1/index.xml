@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Week 1 on The Think Tank</title>
+    <link>https://anoura12.github.io/blog/categories/week-1/</link>
+    <description>Recent content in Week 1 on The Think Tank</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Jun 2021 18:46:43 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/categories/week-1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inception: Google Summer of Code - Week 1</title>
+      <link>https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/</link>
+      <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
+      
+      <guid>https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/</guid>
+      <description>GSoC 2021: Congratulations, your proposal with INCF has been accepted!  I honestly couldn’t believe it. Till 11:17 PM that day, I was ridden with anxiety but it was all worth it when I finally saw the awaited email. Hours spent in proposal writing, maintaining constant communication with the project leads and handling ongoing uncertainties until now finally paid off.
+ GSoC 2021 
+The 2 month long project involves building a working prototype of AutSPACEs - a citizen science, participatory platform for, with and by the autistic community.</description>
+    </item>
+    
+  </channel>
+</rss>
