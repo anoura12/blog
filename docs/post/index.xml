@@ -1,22 +1,158 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on The Think Tank</title>
-    <link>https://anoura12.github.io/blog/post/</link>
-    <description>Recent content in Posts on The Think Tank</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 25 Jun 2021 18:46:43 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Inception: Google Summer of Code - Week 1</title>
-      <link>https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/</link>
-      <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
-      
-      <guid>https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/</guid>
-      <description>GSoC 2021: Congratulations, your proposal with INCF has been accepted!  I honestly couldn’t believe it. Till 11:17 PM that day, I was ridden with anxiety but it was all worth it when I finally saw the awaited email. Hours spent in proposal writing, maintaining constant communication with the project leads and handling ongoing uncertainties until now finally paid off.
- GSoC 2021 
-The 2 month long project involves building a working prototype of AutSPACEs - a citizen science, participatory platform for, with and by the autistic community.</description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Posts on The Think Tank</title>
+        <link>https://anoura12.github.io/blog/post/</link>
+        <description>Recent content in Posts on The Think Tank</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 25 Sep 2023 14:33:30 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Petals - A Game Changer in Training LLMs</title>
+        <link>https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/</link>
+        <pubDate>Mon, 25 Sep 2023 14:33:30 +0530</pubDate>
+        
+        <guid>https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/</guid>
+        <description>&lt;img src="https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/petals.png" alt="Featured image of post Petals - A Game Changer in Training LLMs" /&gt;&lt;p&gt;Large Language Models or LLMs are all the hype nowadays with ChatGPT now being a part of our everyday lives. Naturally, the curious lot of us would like to understand how these LLMs work under the hood and run these models ourselves. To effectively run an LLM, we would need numerous GPU servers to handle the load of inference and model training making it computationally expensive to do so.&lt;/p&gt;
+&lt;p&gt;But how expensive are we talking about here? For training models in particular, one of the fastest GPUs used is the A100 GPU. For reference, a single A100 GPU costs around $15,000. The Galactica model by Meta AI used 128 A100 GPUs for training. Along with high-end GPUs, it needs equally efficient CPUs. So, NVIDIA offers the DGX A100 which contains CPU compute power and 8 A100 GPUs which racks up to around $200,000. If we do the math, the total cost to fully train an LLM is a whopping $3.2 million. A little out of my price range if you ask me.&lt;/p&gt;
+&lt;p&gt;The more feasible way to access LLM capabiities is through APIs like the OpenAI API or online platforms that have these models deployed and open for public use. However, a new open source tool called Petals opens the possibility of running these models in your own computer right in the comfort of your home.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-it-exactly&#34;&gt;What is it exactly?&lt;/h1&gt;
+&lt;p&gt;Petals is an open source tool created by the &lt;a class=&#34;link&#34; href=&#34;https://techcrunch.com/tag/bigscience/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BigScience&lt;/a&gt; community backed by startup, Hugging Face. This novel tool allows you to run an LLM in your own system through shared GPU servers hosted across the world on other machines. (These servers are contributed by people who offer their system&amp;rsquo;s GPU for use.) You download a small part of the model on your machine while the other servers run other parts of the model for inference and fine-tuning. Think Bit-Torrent for LLMs.&lt;/p&gt;
+&lt;p&gt;This novel approach proves to be 10x faster than offloading (processes on a central server divided over multiple servers to increase speed and efficiency of the task) bringing about a more collaborative environment to train LLMs. Petals seeks to incentivise the process of contributing your system GPU where donators will receive “Bloom points” that they can spend on “higher priority or increased security guarantees” or potentially exchange for other rewards.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_workflow.png&#34;
+	width=&#34;1742&#34;
+	height=&#34;680&#34;
+	srcset=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_workflow_hu0c85548ecaadd356da3ebf903d224a56_567826_480x0_resize_box_2.png 480w, https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_workflow_hu0c85548ecaadd356da3ebf903d224a56_567826_1024x0_resize_box_2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;An overview of Petals&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;256&#34;
+		data-flex-basis=&#34;614px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-makes-it-so-novel&#34;&gt;What makes it so novel?&lt;/h1&gt;
+&lt;p&gt;The popular method to running LLMs before was offloading. Here&amp;rsquo;s how lead Petals &lt;a class=&#34;link&#34; href=&#34;https://news.ycombinator.com/item?id=34216213&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;developer&lt;/a&gt;, Alexander Borzunov described offloading - &amp;ldquo;Imagine you have an A100 GPU with 80 GB memory and want to generate text with BLOOM, a 70-block transformer model with ~2.5 GB of weights per block. For each token, offloading will load the first 1/3 of the model (~27 blocks) from RAM/SSD to your GPU memory, run a forward pass through them, then free the memory and load the next 2/3, and so on.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;As opposed to APIs, offloading provided a lot of control to the internal weights of the LLM which is great for researchers however, due to the data transfer (we&amp;rsquo;re talking about transfering the model weights here, so around 175 GB transferred to a GPU in three intervals just to generate one token!) from RAM to GPUs, it leads to pretty high latency. This is particularly not favourable for applications like chatbots that need quick responses and rely on low-latency mechanisms.&lt;/p&gt;
+&lt;p&gt;Petals is able to do inference 10x faster than offloading because it passes the neural network activation values (intermediate values or outputs produced at each layer of a neural network during the forward pass that represent the model&amp;rsquo;s internal representations) rather than all the weights. This results in a much lower latency value which is perfect for building LLM applications. (Something to also note is that Petals does have a lower throughput than offloading)&lt;/p&gt;
+&lt;h1 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h1&gt;
+&lt;p&gt;Petals works as a decentralised pipeline where a model is split into different blocks (transformer blocks) and hosted on different GPU servers. Each server holds consecutive blocks, the number of which depends on the server&amp;rsquo;s available GPU memory.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_health.png&#34;
+	width=&#34;1750&#34;
+	height=&#34;572&#34;
+	srcset=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_health_hu5998f1de35730db3bd35b3129fa03d48_145872_480x0_resize_box_2.png 480w, https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_health_hu5998f1de35730db3bd35b3129fa03d48_145872_1024x0_resize_box_2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;The health monitor of Petals showing the current status of the Stable Beluga 2 model&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;305&#34;
+		data-flex-basis=&#34;734px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Output generation always takes place in an inference session. Before each inference session, the client is routed through a chain of servers that collectively holds models layers. Each server selects the most optimal set of blocks based on the current bottlenecks within the pipeline.&lt;/p&gt;
+&lt;p&gt;In the inference session, the client stores a model&amp;rsquo;s embeddings locally. It then searches embedding vectors on the prefix token of the query from the local embeddings and sends these vectors to the servers. The servers compute these vectors and the final block sends the model representations (neural network activation values) back to the client which then computes probabilities of the next token based on these representations. While the session is active, servers store attention keys and values from past client inputs and use them for subsequent inference steps. To address potential failures, a client stores intermediate activations sent to each block and reroutes them from an offline server to an online node hosting the same block.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_flow.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_flow_huc5ffefe640741a839a89b0101f788715_77454_480x0_resize_box_2.png 480w, https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_flow_huc5ffefe640741a839a89b0101f788715_77454_1024x0_resize_box_2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;General workflow for one token&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;how-do-you-run-it-on-your-computer&#34;&gt;How do you run it on your computer?&lt;/h1&gt;
+&lt;p&gt;It&amp;rsquo;s pretty simple to run Petals on your system. All you need to do is first install Petals&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install git+https://github.com/bigscience-workshop/petals
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and then run the following code with your preferred open source LLM - this uses Stable Beluga 2 which a finetuned model of LLaMa 2.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from transformers import AutoTokenizer
+from petals import AutoDistributedModelForCausalLM
+
+# Choose any model available at https://health.petals.dev
+model_name = &amp;quot;petals-team/StableBeluga2&amp;quot;
+
+# Connect to a distributed network hosting model layers
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoDistributedModelForCausalLM.from_pretrained(model_name)
+
+# Run the model as if it were on your computer
+inputs = tokenizer(&amp;quot;Cat in french is&amp;quot;, return_tensors=&amp;quot;pt&amp;quot;)[&amp;quot;input_ids&amp;quot;]
+outputs = model.generate(inputs, max_new_tokens=100)
+print(tokenizer.decode(outputs[0])) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After running the code, you should get something like this. At the end, we can see the output, &amp;ldquo;Cat in french is chat.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_terminal.png&#34;
+	width=&#34;1572&#34;
+	height=&#34;156&#34;
+	srcset=&#34;https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_terminal_hu7da140fff99e5a29ade3be4a37639a78_43723_480x0_resize_box_2.png 480w, https://anoura12.github.io/blog/blog/p/petals-a-game-changer-in-training-llms/petals_terminal_hu7da140fff99e5a29ade3be4a37639a78_43723_1024x0_resize_box_2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Code Output&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1007&#34;
+		data-flex-basis=&#34;2418px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The line with &lt;code&gt;Route found: 0:40 via ...&lt;/code&gt; shows that blocks 0 to 40 belong to a GPU server with id ending with HfQWVM and blocks 40 to 80 belong to another GPU server with id ending with Zj98Se. We can see these servers on the Petals health monitor as well. The prompt, &amp;ldquo;Cat in french is&amp;rdquo; got converted into embedding vectors which ran through these blocks and gave the final outcome as &amp;ldquo;Cat in french is chat.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;One thing to note is that it does take some time to generate the output from around 15-20 secs to well over a minute depending on the number of the max tokens and the complexity of the prompt. I&amp;rsquo;d say the main advantage that Petals offers over ChatGPT is that it&amp;rsquo;s free and you get more control over the model&amp;rsquo;s internal states to which different adapters can be fitted to finetune the model.&lt;/p&gt;
+&lt;p&gt;A pressing question that may come up is how secure even is this thing? In theory, the inputs of the model that someone else has given could be accessed through the intermediate states between blocks. Additionally, these servers belong to other people who potentially could have access to private data sent as input to the model for it be computed on these servers. To address these issue, Petals has recommended organisations to build private swarms containing GPUs by people that they trust so that their data isn&amp;rsquo;t compromised.&lt;/p&gt;
+&lt;p&gt;In conclusion, I think Petals is great first step to decentralised compute for training LLMs. It opens a door of opportunities for those who can&amp;rsquo;t afford expensive GPUs to run these models which was earlier only restricted to rich corporations with the wherewithal to do so. I&amp;rsquo;m definitely excited to see what&amp;rsquo;s more to come.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Inception: Google Summer of Code - Week 1</title>
+        <link>https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/</link>
+        <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
+        
+        <guid>https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/</guid>
+        <description>&lt;img src="https://anoura12.github.io/blog/p/inception-google-summer-of-code-week-1/GSOC.jpg" alt="Featured image of post Inception: Google Summer of Code - Week 1" /&gt;&lt;h3 id=&#34;div-aligncenter-gsoc-2021-congratulations-your-proposal-with-incf-has-been-accepted-div&#34;&gt;&lt;!-- raw HTML omitted --&gt; &lt;em&gt;GSoC 2021: Congratulations, your proposal with INCF has been accepted!&lt;/em&gt; &lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+&lt;p&gt;I honestly couldn’t believe it. Till 11:17 PM that day, I was ridden with anxiety but it was all worth it when I finally saw the awaited email. Hours spent in proposal writing, maintaining constant communication with the project leads and handling ongoing uncertainties until now finally paid off.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://anoura12.github.io/blog/blog/p/inception-google-summer-of-code-week-1/gsoc.png&#34;
+	width=&#34;1833&#34;
+	height=&#34;691&#34;
+	srcset=&#34;https://anoura12.github.io/blog/blog/p/inception-google-summer-of-code-week-1/gsoc_hu40fd995b94a4871007e1f0ffbea498ba_149691_480x0_resize_box_2.png 480w, https://anoura12.github.io/blog/blog/p/inception-google-summer-of-code-week-1/gsoc_hu40fd995b94a4871007e1f0ffbea498ba_149691_1024x0_resize_box_2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;GSoC 2021&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;265&#34;
+		data-flex-basis=&#34;636px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The 2 month long project involves building a working prototype of AutSPACEs - a citizen science, participatory platform for, with and by the autistic community. It aims to capture their experiences with sensory processing difficulties. It sends this information to scientists who can generate better datasets and urge policy-makers to design and adapt spaces better suited to an autistic person’s needs. (Hence the name, AutSPACEs)&lt;/p&gt;
+&lt;p&gt;The thing is, autism can’t be clearly categorised into separate levels. It’s different for everyone. That’s why making any advancements in this realm prove to be so difficult considering every individual has different needs and requirements. So, AutSPACEs reaches out to these autistic users to get information that is raw, authentic and true to each individual which scientists can rely on to get the best possible outcomes.&lt;/p&gt;
+&lt;p&gt;AutSPACEs is developed using Python over a Django framework. It is connected to a backend database called Open Humans which is responsible for storing all the user experiences. Essentially, this database will be accessed through API calls where each user’s information will be stored as JSON data in a file. For the frontend, Bootstrap is being implemented to design the web pages with reference to simplified wireframes. The project has a lot of focus on the UI aspects as well because certain colours and layouts tend to trigger an autistic person’s senses. Hence, making the site as accessible as possible is a priority.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://anoura12.github.io/blog/blog/p/inception-google-summer-of-code-week-1/Citscicartoon.png&#34;
+	width=&#34;1062&#34;
+	height=&#34;849&#34;
+	srcset=&#34;https://anoura12.github.io/blog/blog/p/inception-google-summer-of-code-week-1/Citscicartoon_hu44da07b71cf8c59c694935722b47d95b_411231_480x0_resize_box_2.png 480w, https://anoura12.github.io/blog/blog/p/inception-google-summer-of-code-week-1/Citscicartoon_hu44da07b71cf8c59c694935722b47d95b_411231_1024x0_resize_box_2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;How AutSPACEs Works&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;125&#34;
+		data-flex-basis=&#34;300px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The project is currently in its early stages with the immediate goal of creating an MVP or a minimum viable product of the site. I’m really looking forward to helping the team achieve this!&lt;/p&gt;
+&lt;p&gt;My Google Summer of Code journey took off with the community bonding period. Right after my first interaction with my mentors, Kirstie Whitaker and Lotty Coupat, and the autistic community along with project lead, Georgia Aitkenhead and head developer, James Kim, I was absolutely delighted to be a part of this amazing team. The meetups and the community calls provide a really lively atmosphere to share ideas and collaborate with the moderators and the dev team to reach viable solutions.&lt;/p&gt;
+&lt;p&gt;I can’t wait to see what’s in store for me in the next two months. To infinity and beyond!&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

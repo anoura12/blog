@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Run an LLM on your own computer!'>
+<title>Petals - A Game Changer in Training LLMs</title>
+
+<link rel='canonical' href='https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/'>
+
+<link rel="stylesheet" href="/blog/scss/style.min.93787d660481bf96fd1986ced0755e79fdf21bde194bb47679a21a6fdde44e30.css"><meta property='og:title' content='Petals - A Game Changer in Training LLMs'>
+<meta property='og:description' content='Run an LLM on your own computer!'>
+<meta property='og:url' content='https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/'>
+<meta property='og:site_name' content='The Think Tank'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-09-25T14:33:30&#43;05:30'/><meta property='article:modified_time' content='2023-09-25T14:33:30&#43;05:30'/><meta property='og:image' content='https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/petals.png' />
+<meta name="twitter:title" content="Petals - A Game Changer in Training LLMs">
+<meta name="twitter:description" content="Run an LLM on your own computer!"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://anoura12.github.io/blog/p/petals-a-game-changer-in-training-llms/petals.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/blog">
+                
+                    
+                    
+                    
+                        
+                        <img src="/blog/images/anoushka_hud5e145e78152110b3ea1e0fd4af38925_69107_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/blog">The Think Tank</a></h1>
+            <h2 class="site-description">Anoushka Ramesh</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/blog/p/petals-a-game-changer-in-training-llms/">
+                <img src="/blog/p/petals-a-game-changer-in-training-llms/petals_huac0153e0569e2ace21e9c0c4fd6908e8_139392_800x0_resize_box_2.png"
+                        srcset="/blog/p/petals-a-game-changer-in-training-llms/petals_huac0153e0569e2ace21e9c0c4fd6908e8_139392_800x0_resize_box_2.png 800w, /blog/p/petals-a-game-changer-in-training-llms/petals_huac0153e0569e2ace21e9c0c4fd6908e8_139392_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="325" 
+                        loading="lazy"
+                        alt="Featured image of post Petals - A Game Changer in Training LLMs" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/blog/p/petals-a-game-changer-in-training-llms/">Petals - A Game Changer in Training LLMs</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Run an LLM on your own computer!
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 25, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Large Language Models or LLMs are all the hype nowadays with ChatGPT now being a part of our everyday lives. Naturally, the curious lot of us would like to understand how these LLMs work under the hood and run these models ourselves. To effectively run an LLM, we would need numerous GPU servers to handle the load of inference and model training making it computationally expensive to do so.</p>
+<p>But how expensive are we talking about here? For training models in particular, one of the fastest GPUs used is the A100 GPU. For reference, a single A100 GPU costs around $15,000. The Galactica model by Meta AI used 128 A100 GPUs for training. Along with high-end GPUs, it needs equally efficient CPUs. So, NVIDIA offers the DGX A100 which contains CPU compute power and 8 A100 GPUs which racks up to around $200,000. If we do the math, the total cost to fully train an LLM is a whopping $3.2 million. A little out of my price range if you ask me.</p>
+<p>The more feasible way to access LLM capabiities is through APIs like the OpenAI API or online platforms that have these models deployed and open for public use. However, a new open source tool called Petals opens the possibility of running these models in your own computer right in the comfort of your home.</p>
+<h1 id="what-is-it-exactly">What is it exactly?</h1>
+<p>Petals is an open source tool created by the <a class="link" href="https://techcrunch.com/tag/bigscience/"  target="_blank" rel="noopener"
+    >BigScience</a> community backed by startup, Hugging Face. This novel tool allows you to run an LLM in your own system through shared GPU servers hosted across the world on other machines. (These servers are contributed by people who offer their system&rsquo;s GPU for use.) You download a small part of the model on your machine while the other servers run other parts of the model for inference and fine-tuning. Think Bit-Torrent for LLMs.</p>
+<p>This novel approach proves to be 10x faster than offloading (processes on a central server divided over multiple servers to increase speed and efficiency of the task) bringing about a more collaborative environment to train LLMs. Petals seeks to incentivise the process of contributing your system GPU where donators will receive “Bloom points” that they can spend on “higher priority or increased security guarantees” or potentially exchange for other rewards.</p>
+<p><img src="/blog/p/petals-a-game-changer-in-training-llms/petals_workflow.png"
+	width="1742"
+	height="680"
+	srcset="/blog/p/petals-a-game-changer-in-training-llms/petals_workflow_hu0c85548ecaadd356da3ebf903d224a56_567826_480x0_resize_box_2.png 480w, /blog/p/petals-a-game-changer-in-training-llms/petals_workflow_hu0c85548ecaadd356da3ebf903d224a56_567826_1024x0_resize_box_2.png 1024w"
+	loading="lazy"
+	
+		alt="An overview of Petals"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="256"
+		data-flex-basis="614px"
+	
+></p>
+<h1 id="what-makes-it-so-novel">What makes it so novel?</h1>
+<p>The popular method to running LLMs before was offloading. Here&rsquo;s how lead Petals <a class="link" href="https://news.ycombinator.com/item?id=34216213"  target="_blank" rel="noopener"
+    >developer</a>, Alexander Borzunov described offloading - &ldquo;Imagine you have an A100 GPU with 80 GB memory and want to generate text with BLOOM, a 70-block transformer model with ~2.5 GB of weights per block. For each token, offloading will load the first 1/3 of the model (~27 blocks) from RAM/SSD to your GPU memory, run a forward pass through them, then free the memory and load the next 2/3, and so on.&rdquo;</p>
+<p>As opposed to APIs, offloading provided a lot of control to the internal weights of the LLM which is great for researchers however, due to the data transfer (we&rsquo;re talking about transfering the model weights here, so around 175 GB transferred to a GPU in three intervals just to generate one token!) from RAM to GPUs, it leads to pretty high latency. This is particularly not favourable for applications like chatbots that need quick responses and rely on low-latency mechanisms.</p>
+<p>Petals is able to do inference 10x faster than offloading because it passes the neural network activation values (intermediate values or outputs produced at each layer of a neural network during the forward pass that represent the model&rsquo;s internal representations) rather than all the weights. This results in a much lower latency value which is perfect for building LLM applications. (Something to also note is that Petals does have a lower throughput than offloading)</p>
+<h1 id="how-does-it-work">How does it work?</h1>
+<p>Petals works as a decentralised pipeline where a model is split into different blocks (transformer blocks) and hosted on different GPU servers. Each server holds consecutive blocks, the number of which depends on the server&rsquo;s available GPU memory.</p>
+<p><img src="/blog/p/petals-a-game-changer-in-training-llms/petals_health.png"
+	width="1750"
+	height="572"
+	srcset="/blog/p/petals-a-game-changer-in-training-llms/petals_health_hu5998f1de35730db3bd35b3129fa03d48_145872_480x0_resize_box_2.png 480w, /blog/p/petals-a-game-changer-in-training-llms/petals_health_hu5998f1de35730db3bd35b3129fa03d48_145872_1024x0_resize_box_2.png 1024w"
+	loading="lazy"
+	
+		alt="The health monitor of Petals showing the current status of the Stable Beluga 2 model"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="305"
+		data-flex-basis="734px"
+	
+></p>
+<p>Output generation always takes place in an inference session. Before each inference session, the client is routed through a chain of servers that collectively holds models layers. Each server selects the most optimal set of blocks based on the current bottlenecks within the pipeline.</p>
+<p>In the inference session, the client stores a model&rsquo;s embeddings locally. It then searches embedding vectors on the prefix token of the query from the local embeddings and sends these vectors to the servers. The servers compute these vectors and the final block sends the model representations (neural network activation values) back to the client which then computes probabilities of the next token based on these representations. While the session is active, servers store attention keys and values from past client inputs and use them for subsequent inference steps. To address potential failures, a client stores intermediate activations sent to each block and reroutes them from an offline server to an online node hosting the same block.</p>
+<p><img src="/blog/p/petals-a-game-changer-in-training-llms/petals_flow.png"
+	width="1920"
+	height="1080"
+	srcset="/blog/p/petals-a-game-changer-in-training-llms/petals_flow_huc5ffefe640741a839a89b0101f788715_77454_480x0_resize_box_2.png 480w, /blog/p/petals-a-game-changer-in-training-llms/petals_flow_huc5ffefe640741a839a89b0101f788715_77454_1024x0_resize_box_2.png 1024w"
+	loading="lazy"
+	
+		alt="General workflow for one token"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<h1 id="how-do-you-run-it-on-your-computer">How do you run it on your computer?</h1>
+<p>It&rsquo;s pretty simple to run Petals on your system. All you need to do is first install Petals</p>
+<pre><code>pip install git+https://github.com/bigscience-workshop/petals
+</code></pre><p>and then run the following code with your preferred open source LLM - this uses Stable Beluga 2 which a finetuned model of LLaMa 2.</p>
+<pre><code>from transformers import AutoTokenizer
+from petals import AutoDistributedModelForCausalLM
+
+# Choose any model available at https://health.petals.dev
+model_name = &quot;petals-team/StableBeluga2&quot;
+
+# Connect to a distributed network hosting model layers
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoDistributedModelForCausalLM.from_pretrained(model_name)
+
+# Run the model as if it were on your computer
+inputs = tokenizer(&quot;Cat in french is&quot;, return_tensors=&quot;pt&quot;)[&quot;input_ids&quot;]
+outputs = model.generate(inputs, max_new_tokens=100)
+print(tokenizer.decode(outputs[0])) 
+</code></pre><p>After running the code, you should get something like this. At the end, we can see the output, &ldquo;Cat in french is chat.&rdquo;</p>
+<p><img src="/blog/p/petals-a-game-changer-in-training-llms/petals_terminal.png"
+	width="1572"
+	height="156"
+	srcset="/blog/p/petals-a-game-changer-in-training-llms/petals_terminal_hu7da140fff99e5a29ade3be4a37639a78_43723_480x0_resize_box_2.png 480w, /blog/p/petals-a-game-changer-in-training-llms/petals_terminal_hu7da140fff99e5a29ade3be4a37639a78_43723_1024x0_resize_box_2.png 1024w"
+	loading="lazy"
+	
+		alt="Code Output"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1007"
+		data-flex-basis="2418px"
+	
+></p>
+<p>The line with <code>Route found: 0:40 via ...</code> shows that blocks 0 to 40 belong to a GPU server with id ending with HfQWVM and blocks 40 to 80 belong to another GPU server with id ending with Zj98Se. We can see these servers on the Petals health monitor as well. The prompt, &ldquo;Cat in french is&rdquo; got converted into embedding vectors which ran through these blocks and gave the final outcome as &ldquo;Cat in french is chat.&rdquo;</p>
+<p>One thing to note is that it does take some time to generate the output from around 15-20 secs to well over a minute depending on the number of the max tokens and the complexity of the prompt. I&rsquo;d say the main advantage that Petals offers over ChatGPT is that it&rsquo;s free and you get more control over the model&rsquo;s internal states to which different adapters can be fitted to finetune the model.</p>
+<p>A pressing question that may come up is how secure even is this thing? In theory, the inputs of the model that someone else has given could be accessed through the intermediate states between blocks. Additionally, these servers belong to other people who potentially could have access to private data sent as input to the model for it be computed on these servers. To address these issue, Petals has recommended organisations to build private swarms containing GPUs by people that they trust so that their data isn&rsquo;t compromised.</p>
+<p>In conclusion, I think Petals is great first step to decentralised compute for training LLMs. It opens a door of opportunities for those who can&rsquo;t afford expensive GPUs to run these models which was earlier only restricted to rich corporations with the wherewithal to do so. I&rsquo;m definitely excited to see what&rsquo;s more to come.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 The Think Tank
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.20.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/blog/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

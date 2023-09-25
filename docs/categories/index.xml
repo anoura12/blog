@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on The Think Tank</title>
-    <link>https://anoura12.github.io/blog/categories/</link>
-    <description>Recent content in Categories on The Think Tank</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 25 Jun 2021 18:46:43 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GSoC</title>
-      <link>https://anoura12.github.io/blog/categories/gsoc/</link>
-      <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
-      
-      <guid>https://anoura12.github.io/blog/categories/gsoc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Week 1</title>
-      <link>https://anoura12.github.io/blog/categories/week-1/</link>
-      <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
-      
-      <guid>https://anoura12.github.io/blog/categories/week-1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://anoura12.github.io/blog/categories/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://anoura12.github.io/blog/categories/test/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>Categories on The Think Tank</title>
+        <link>https://anoura12.github.io/blog/categories/</link>
+        <description>Recent content in Categories on The Think Tank</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 25 Jun 2021 18:46:43 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>GSoC</title>
+        <link>https://anoura12.github.io/blog/categories/gsoc/</link>
+        <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
+        
+        <guid>https://anoura12.github.io/blog/categories/gsoc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Week 1</title>
+        <link>https://anoura12.github.io/blog/categories/week-1/</link>
+        <pubDate>Fri, 25 Jun 2021 18:46:43 +0530</pubDate>
+        
+        <guid>https://anoura12.github.io/blog/categories/week-1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Test</title>
+        <link>https://anoura12.github.io/blog/categories/test/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://anoura12.github.io/blog/categories/test/</guid>
+        <description>&lt;img src="https://anoura12.github.io/blog/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        </item>
+        
+    </channel>
 </rss>
