@@ -6,7 +6,20 @@
         <description>Recent content in Posts on The Think Tank</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 04 Oct 2023 14:24:06 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 05 Oct 2023 00:17:14 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Helm</title>
+        <link>https://anoura12.github.io/blog/p/helm/</link>
+        <pubDate>Thu, 05 Oct 2023 00:17:14 +0530</pubDate>
+        
+        <guid>https://anoura12.github.io/blog/p/helm/</guid>
+        <description>&lt;p&gt;What is Helm
+Design Principle
+Scenarios
+Tasks
+Code&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Write like Agatha Christie using NanoGPT!</title>
         <link>https://anoura12.github.io/blog/p/write-like-agatha-christie-using-nanogpt/</link>
         <pubDate>Wed, 04 Oct 2023 14:24:06 +0530</pubDate>
@@ -337,7 +350,7 @@ But that is the trouble: the Duke of Douglas has no right to dispose of the pain
 unless he has the right to dispose of it.&amp;quot;
 
 &amp;quot;But what of, Miss Bates?&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This output is much much better and it actually does resemble her writing a lot even though it lacks overall structure to the story. For 10 iterations of finetuning, this isn&amp;rsquo;t bad at all. We can perhaps make this better by increasing the number of iterations in training or increasing batch_size but it might be a but more computationally expensive to do so. Overall, it was a nice experiment and an interesting introduction to training and fientuning models.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This output is much much better and it actually does resemble her writing a lot even though it lacks overall structure to the story. For 10 iterations of finetuning, this isn&amp;rsquo;t bad at all. We can perhaps make this better by increasing the number of iterations in training or increasing batch_size but it might be a bit more computationally expensive to do so. Overall, it was a nice experiment and an interesting introduction to training and finetuning models.&lt;/p&gt;
 </description>
         </item>
         <item>
