@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Finetuning GPT2 got me close to writing like my favourite mystery author'>
+<title>Write like Agatha Christie using NanoGPT!</title>
+
+<link rel='canonical' href='https://anoura12.github.io/blog/p/write-like-agatha-christie-using-nanogpt/'>
+
+<link rel="stylesheet" href="/blog/scss/style.min.93787d660481bf96fd1986ced0755e79fdf21bde194bb47679a21a6fdde44e30.css"><meta property='og:title' content='Write like Agatha Christie using NanoGPT!'>
+<meta property='og:description' content='Finetuning GPT2 got me close to writing like my favourite mystery author'>
+<meta property='og:url' content='https://anoura12.github.io/blog/p/write-like-agatha-christie-using-nanogpt/'>
+<meta property='og:site_name' content='The Think Tank'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-10-04T14:24:06&#43;05:30'/><meta property='article:modified_time' content='2023-10-04T14:24:06&#43;05:30'/><meta property='og:image' content='https://anoura12.github.io/blog/p/write-like-agatha-christie-using-nanogpt/agathabooks.jpg' />
+<meta name="twitter:title" content="Write like Agatha Christie using NanoGPT!">
+<meta name="twitter:description" content="Finetuning GPT2 got me close to writing like my favourite mystery author"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://anoura12.github.io/blog/p/write-like-agatha-christie-using-nanogpt/agathabooks.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/blog">
+                
+                    
+                    
+                    
+                        
+                        <img src="/blog/images/anoushka_hud5e145e78152110b3ea1e0fd4af38925_69107_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/blog">The Think Tank</a></h1>
+            <h2 class="site-description">Anoushka Ramesh</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/archives/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/search/' >
+                
+                
+                    
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/blog/p/write-like-agatha-christie-using-nanogpt/">
+                <img src="/blog/p/write-like-agatha-christie-using-nanogpt/agathabooks_hu3b064dde4729d41a24ae36393a586490_110863_800x0_resize_q75_box.jpg"
+                        srcset="/blog/p/write-like-agatha-christie-using-nanogpt/agathabooks_hu3b064dde4729d41a24ae36393a586490_110863_800x0_resize_q75_box.jpg 800w, /blog/p/write-like-agatha-christie-using-nanogpt/agathabooks_hu3b064dde4729d41a24ae36393a586490_110863_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="800" 
+                        loading="lazy"
+                        alt="Featured image of post Write like Agatha Christie using NanoGPT!" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/blog/p/write-like-agatha-christie-using-nanogpt/">Write like Agatha Christie using NanoGPT!</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Finetuning GPT2 got me close to writing like my favourite mystery author
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 04, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Employing LLMs to do what we want is now possible through prompting and finetuning. For specific downstream tasks, we can finetune the LLM on our own custom dataset to generate the outputs that we want. However, finetuning is computationally expensive requiring GPUs to train these LLMs so most of the times, we can&rsquo;t fientune LLMs using just our computer.</p>
+<p>Andrej Karpathy from OpenAI created a simple framework called nanoGPT that enables you to train and finetune medium sized GPTs. It gives you an interesting insight into how a GPT works and allows you to use your custom dataset to train these models. His <a class="link" href="https://www.youtube.com/watch?v=kCc8FmEb1nY&amp;t=2265s"  target="_blank" rel="noopener"
+    >video</a> on building a GPT from scratch, breaks down the concepts of a GPT&rsquo;s architecture and what really goes on under the hood.</p>
+<p>Being an avid fan of Agatha Christie&rsquo;s Hercule Poirot mystery series, I decided to train and finetune a GPT to generating text that somewhat resembles her writing and enjoy reading a never seen before mystery story in the hand of Agatha Christie!</p>
+<p><img src="https://media.giphy.com/media/w4Jbv7uv4n1ug/giphy.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="training">Training</h1>
+<p>There are three stages to producing a piece of text through training a GPT on your dataset in nanoGPT</p>
+<ul>
+<li>Prepare</li>
+<li>Train</li>
+<li>Sample</li>
+</ul>
+<h2 id="prepare">Prepare</h2>
+<p>This stage involves loading your dataset (in this case, a text file) and creating tokens through the OpenAI BPE tokeniser called tiktoken. For the dataset, I used Agatha Christie&rsquo;s Poirot Investigates book which is a series of 8 short murder mystery stories.</p>
+<p>I initially thought of getting one of her novels which contained one mystery and inputting that into the model directly for training however, that didn&rsquo;t work out so well. Choosing a list of short stories which contains a mystery from start to end would give the model several examples of her writing in a short dataset which would be more feasible than working with several novels for our experiment.</p>
+<p>For every new dataset, we need to create a prepare.py file which ultimately divides the tokens into training(train.bin) and validation (val.bin) data. I stored the file under a folder called <code>agatha</code> in the <code>data</code> folder.</p>
+<pre><code>import os
+import requests
+import tiktoken
+import numpy as np
+
+input_file_path = os.path.join(os.path.dirname(_file_), 'poirot.txt')
+with open(input_file_path, 'r') as f:
+    data = f.read()
+n = len(data)
+train_data = data[:int(n*0.9)]
+val_data = data[int(n*0.9):]
+
+# encode with tiktoken gpt2 bpe
+enc = tiktoken.get_encoding(&quot;gpt2&quot;)
+train_ids = enc.encode_ordinary(train_data)
+val_ids = enc.encode_ordinary(val_data)
+print(f&quot;train has {len(train_ids):,} tokens&quot;)
+print(f&quot;val has {len(val_ids):,} tokens&quot;)
+
+# export to bin files
+train_ids = np.array(train_ids, dtype=np.uint16)
+val_ids = np.array(val_ids, dtype=np.uint16)
+train_ids.tofile(os.path.join(os.path.dirname(_file_), 'train.bin'))
+val_ids.tofile(os.path.join(os.path.dirname(_file_), 'val.bin'))
+</code></pre><p>To run the prepare.py file, run this command.</p>
+<pre><code>python data/agatha/prepare.py
+</code></pre><p>You should get something like this after running the command</p>
+<p><img src="/blog/p/write-like-agatha-christie-using-nanogpt/train_val.jpeg"
+	width="1030"
+	height="77"
+	srcset="/blog/p/write-like-agatha-christie-using-nanogpt/train_val_hub2e41e221a363b43999e7043641b983a_20969_480x0_resize_q75_box.jpeg 480w, /blog/p/write-like-agatha-christie-using-nanogpt/train_val_hub2e41e221a363b43999e7043641b983a_20969_1024x0_resize_q75_box.jpeg 1024w"
+	loading="lazy"
+	
+		alt="tokens"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1337"
+		data-flex-basis="3210px"
+	
+></p>
+<h2 id="train">Train</h2>
+<p>Next, we train the model on the training data by running this command.</p>
+<pre><code>python train.py config/train_poirot.py
+</code></pre><p>So, as you can see there are two files in question here - the train.py and train_poirot.py files.</p>
+<p>The train.py file defines a set of parameters and the code dependent on the kind of device (cpu, cuda, mps etc.) you&rsquo;re using. For this experiment, I used a single NVIDIA GPU to run around 5000 iterations for training the model. The training process involves the following steps:</p>
+<ol>
+<li>Fetch the first batch of data (batch_size = 32)</li>
+<li>Set the learning rate</li>
+<li>Evaluate loss</li>
+<li>Capture checkpoints which is done everytime the loss decreases</li>
+<li>Perform a forward backward pass (update the model)</li>
+</ol>
+<p>The train_poirot.py file is a neat way to store all the parameters that are set to your custom values that override the default values in train.py. Here&rsquo;s what the main parameters mean:</p>
+<ul>
+<li><code>gradient_accumulation_steps</code> - This is the number of batches after which a gradient update should happen.</li>
+<li><code>batch_size</code> - This refers to the number of data samples processed in one forward pass</li>
+<li><code>block_size</code> - This refers to the context length. The longer the context length, the more computationally expensive it will get.</li>
+<li><code>n_layer</code> - The number of layers in the model, more the layers more complex is your model</li>
+<li><code>n_head</code> - The number of attention heads in the multi-layer attention part of the transformer</li>
+<li><code>n_embd</code> - The dimensionality of embedding vectors, higher the value, higher the complexity</li>
+<li><code>dropout</code> - Helps prevent overfitting by setting a number of inputs to zero. So, a dropout value of 0.2 refers to 20% of the input values being zero.</li>
+<li><code>learning rate</code> - Step-size at which model&rsquo;s parameters are updated</li>
+<li><code>max_iters</code> - Maximum number of iterations which the model is trained on</li>
+</ul>
+<pre><code>out_dir = 'out-poirot'
+eval_interval = 250 # keep frequent because we'll overfit
+eval_iters = 200
+log_interval = 10 # don't print too too often
+
+# we expect to overfit on this small dataset, so only save when val improves
+always_save_checkpoint = False
+
+wandb_log = False # override via command line if you like
+wandb_project = 'agatha'
+wandb_run_name = 'mini-gpt'
+
+dataset = 'agatha'
+gradient_accumulation_steps = 1
+batch_size = 32
+block_size = 256 # context of up to 256 previous characters
+
+# baby GPT model :)
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
+max_iters = 5000
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
+
+warmup_iters = 100 # not super necessary potentially
+</code></pre><p>This is how the training process looks like. <code>mfu</code> stands for Memory Footprint Utilisation which indicates the amount of memory used for each iteration of the training process as a percentage.</p>
+<p><img src="/blog/p/write-like-agatha-christie-using-nanogpt/train.jpeg"
+	width="900"
+	height="559"
+	srcset="/blog/p/write-like-agatha-christie-using-nanogpt/train_hu4a227be7b74c3f19b47b34d1fb0f79e6_148701_480x0_resize_q75_box.jpeg 480w, /blog/p/write-like-agatha-christie-using-nanogpt/train_hu4a227be7b74c3f19b47b34d1fb0f79e6_148701_1024x0_resize_q75_box.jpeg 1024w"
+	loading="lazy"
+	
+		alt="training"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="386px"
+	
+></p>
+<h2 id="sample">Sample</h2>
+<p>This stage involves generating the text after the model has been trained. The file also conatins majority of the code defined in train.py except for the following piece of code. It refers to the checkpoint contained in <code>out-poirot</code> to generate text.</p>
+<pre><code># encode the beginning of the prompt
+if start.startswith('FILE:'):
+    with open(start[5:], 'r', encoding='utf-8') as f:
+        start = f.read()
+start_ids = encode(start)
+x = (torch.tensor(start_ids, dtype=torch.long, device=device)[None, ...])
+
+# run generation
+with torch.no_grad():
+    with ctx:
+        for k in range(num_samples):
+            y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k)
+            print(decode(y[0].tolist()))
+            print('---------------')
+</code></pre><p>To generate text, run this command.</p>
+<pre><code>python sample.py --out_dir=out-poirot
+</code></pre><p>Annddd this is the output</p>
+<pre><code>'And that I'd got to have been
+belant is that I should be really to hurry over, Hastings, but he was no. I am
+have the mysterious man, my friend.'
+
+The little bottle to take a lady's nurse, and the stairs. He is no further supply into the disaster. In a
+
+'I didn't it wasps'But I ami. It's death, eh, I was likely to scorn, Lady Juliet
+your mind. She was a little husband's a moment! But they feel
+partly and
+not yet my little affair on the garden, you reply. She, but I was a sharp face waspsâ€” and her husband, the window.
+evening, however, madame, you know that she
+friend, Monsieurier's eight, but no time, there was
+on one, I knew that she slipped to be tired. He is the paper for your time, though she had
+never just for you say, the smoking-five and a moustache. I knew
+window, did not be the boy to see her, and left the library.
+
+to see, Poirot. He
+But it somewhere.'
+'I know this evening.'
+</code></pre><p>It doesn&rsquo;t make a lot of sense but the words themselves sort of resemble her writing?</p>
+<p>Let&rsquo;s try to do better with finetuning.</p>
+<h1 id="finetuning">Finetuning</h1>
+<p>The process for finetuning remains the same except this time we refer to a different set of parameters defined in <code>finetune_poirot.py</code>. In this file, we load an existing pretrained model (gpt2-large - 776 million params!)
+and finetune that to our usecase.</p>
+<pre><code>import time
+
+out_dir = 'out-poirot'
+eval_interval = 5
+eval_iters = 40
+wandb_log = False # feel free to turn on
+wandb_project = 'agatha'
+wandb_run_name = 'ft-' + str(time.time())
+
+dataset = 'agatha'
+init_from = 'gpt2-large' # this is the largest GPT-2 model
+
+# only save checkpoints if the validation loss improves
+always_save_checkpoint = False
+
+batch_size = 1
+gradient_accumulation_steps = 32
+max_iters = 10
+
+# finetune at constant LR
+learning_rate = 3e-5
+decay_lr = False
+</code></pre><p>To run this file, we use the following command.</p>
+<pre><code>python train.py config/finetune_poirot.py
+</code></pre><p>This took a lot longer than expected and I managed to get 10 iterations out of it</p>
+<p><img src="/blog/p/write-like-agatha-christie-using-nanogpt/finetune.jpeg"
+	width="1288"
+	height="482"
+	srcset="/blog/p/write-like-agatha-christie-using-nanogpt/finetune_hu633a271990deba70090d9b59fca5a233_125742_480x0_resize_q75_box.jpeg 480w, /blog/p/write-like-agatha-christie-using-nanogpt/finetune_hu633a271990deba70090d9b59fca5a233_125742_1024x0_resize_q75_box.jpeg 1024w"
+	loading="lazy"
+	
+		alt="Finetuning"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="267"
+		data-flex-basis="641px"
+	
+></p>
+<p>Next, we define a prompt.txt file which is converted to embeddings in the sample.py file. Initially, I used the following prompt - In the style of Agatha Christie, craft a short story where an unexpected guest at a remote country estate dinner party ends up murdered, leaving the guests to unravel the secrets and motives hidden among them.</p>
+<p>It got me some pretty silly results</p>
+<p><img src="/blog/p/write-like-agatha-christie-using-nanogpt/silly.jpeg"
+	width="1600"
+	height="366"
+	srcset="/blog/p/write-like-agatha-christie-using-nanogpt/silly_hu941e12d02283ce2e345f7b36857c634a_77313_480x0_resize_q75_box.jpeg 480w, /blog/p/write-like-agatha-christie-using-nanogpt/silly_hu941e12d02283ce2e345f7b36857c634a_77313_1024x0_resize_q75_box.jpeg 1024w"
+	loading="lazy"
+	
+		alt="Absolutely random"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="437"
+		data-flex-basis="1049px"
+	
+></p>
+<p>So, I tweaked the prompt so that the model generates text that continues the story. The prompt starts like this-</p>
+<pre><code>Title: &quot;The Enigmatic Garden Murder&quot;
+
+In the sleepy village of Willowbrook, nestled amidst rolling hills and lush greenery, 
+a group of friends gather for their annual garden party. 
+Lady Margaret Hastings, the elegant hostess known for her exquisite rose garden, 
+has invited her closest friends and neighbors to revel in the beauty of her estate.        
+
+As the afternoon sun bathes the garden in a warm, golden glow,
+</code></pre><p>And after waiting patiently for 30 mins as the model generated the sample, we get this</p>
+<pre><code>Title: &quot;The Enigmatic Garden Murder&quot;
+
+In the sleepy village of Willowbrook, nestled amidst rolling hills and lush greenery, 
+a group of friends gather for their annual garden party. 
+Lady Margaret Hastings, the elegant hostess known for her exquisite rose garden, 
+has invited her closest friends and neighbors to revel in the beauty of her estate.        
+
+As the afternoon sun bathes the garden in a warm, golden glow, 
+a small, young man arrives in a beige chauffeur's car and picks up a young woman from the carousel. 
+He smiles broadly and informs her that the afternoon's guests are all her relatives. 
+They are not the sort of people she is used to seeing, however, and they demand to know where she is going. 
+The young man reluctantly responds that she is going to the cottage of the Duke of Douglas.
+
+The Duchess appears with her husband at once, but when the young man insists on taking his leave, 
+she hesitates. Despite her chagrin, she gives him the keys to the cottage and asks him to escort her out.
+
+Murdered: A Girl Who Loved the Water
+
+The young man emerges from the cottage in a raincoat and comes out into the alleyway with his mistress. 
+They approach each other.
+
+&quot;I should like to ask you something,&quot; he says. &quot;You're going to the cottage of the Duke of Douglas?&quot;
+
+&quot;Yes, I am.&quot;
+
+&quot;But what is the purpose for your visit?&quot;
+
+&quot;I want to find out more about the painting in the house. It was a gift from a friend of mine. 
+He did not appreciate the painting quite as I do.&quot;
+
+&quot;He very nearly had it,&quot; replied the maid. &quot;He had an obstinate and irritable temper.&quot;
+
+&quot;But how could he have done it?&quot; asked the young man anxiously.
+
+Dowager Margaret Hastings took a deep breath. &quot;Well, he said it was too big and too much of a pain to 
+take to get rid of it. He thought it too much like a picture that belonged to his parents. 
+He said he would prefer to have it cleaned up. So he finally decided to destroy it.&quot;
+
+&quot;Is that all?&quot; inquired the maid, incredulously. &quot;But how?&quot;
+
+&quot;Oh, it's not so terrible,&quot; replied Margaret Hastings with a smile. 
+&quot;It just took so long for him to kill the painting, and he was an old hand at that time, 
+so he got in a little bit of trouble and had to meet with a certain fate.&quot;
+
+&quot;You mean, he got caught up in it?&quot; asked the maid. 
+&quot;Surely you didn't mean to kill him in the first place, did you? 
+Why would you do such a thing?&quot;
+
+&quot;Miss Bates, I was merely trying to amuse myself; you see, when the painting was at my disposal, 
+I took it out and examined it closely, and I thought there was no danger to life or limb. 
+But, as I said, the Duke of Douglas has a temper, and, as a result, he was very angry. 
+Of course he pushed me aside and, when I tried to get away, he caught me up.&quot;
+
+&quot;That's all right, my dear lady. You don't see any danger in it?&quot;
+
+&quot;No, my dear Bates; it was simply a natural, even amusing thing that occurred. I didn't blame him for it. 
+His temper was like mine. It's all right to be angry sometimes, and sometimes one is. 
+In this case, it seems to me that he was quite justified. I had a pretty good instinct about such things; 
+I knew the Duke of Douglas personally, and, of course, he was no friend of mine. He was a good man, 
+a sensible man, and he knew he was not to blame for what had happened.&quot;
+
+Douglas personally, and, of course, he was no friend of mine. 
+He was a good man, a sensible man, and he knew he was not to blame for what had happened.&quot;
+
+&quot;And it was, indeed, your husband who had fallen into the trap?&quot; asked the maid. 
+&quot;Did you say that he had fallen into the trap?&quot;
+
+&quot;Not the trap myself, Miss Bates. But the Duke of Douglas has the right to dispose of the painting.&quot;
+
+&quot;But why?&quot; asked the maid in surprise. &quot;Doesn't he have the right to dispose of the painting?&quot;
+
+&quot;Yes; he did have the right to dispose of it,&quot; said Margaret Hastings with a gentle smile. 
+&quot;There are rules governing this matter, Miss Bates; one must be content if one 
+possesses no means of disposing of a work of art because it is his--and somebody else's--property. 
+There are no grounds for anger in this matter.&quot; The maid began to tremble. 
+&quot;Oh, my God!&quot; she cried. &quot;You're quite right! I have never erred in my life. 
+I really believe the Duke of Douglas is guilty of murder!&quot;
+
+The maid's despair was quickly quelled. &quot;I think,&quot; said Margaret Hastings, 
+&quot;that your husband may have been justified. I really do. 
+But that is the trouble: the Duke of Douglas has no right to dispose of the painting 
+unless he has the right to dispose of it.&quot;
+
+&quot;But what of, Miss Bates?&quot;
+</code></pre><p>This output is much much better and it actually does resemble her writing a lot even though it lacks overall structure to the story. For 10 iterations of finetuning, this isn&rsquo;t bad at all. We can perhaps make this better by increasing the number of iterations in training or increasing batch_size but it might be a but more computationally expensive to do so. Overall, it was a nice experiment and an interesting introduction to training and fientuning models.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 The Think Tank
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.20.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/blog/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
