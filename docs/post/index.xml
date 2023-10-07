@@ -6,17 +6,20 @@
         <description>Recent content in Posts on The Think Tank</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 05 Oct 2023 00:17:14 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Helm</title>
-        <link>https://anoura12.github.io/blog/p/helm/</link>
-        <pubDate>Thu, 05 Oct 2023 00:17:14 +0530</pubDate>
+        <lastBuildDate>Sat, 07 Oct 2023 14:45:50 +0530</lastBuildDate><atom:link href="https://anoura12.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Evaluating LLMs Part I - Benchmarking Strategies</title>
+        <link>https://anoura12.github.io/blog/p/evaluating-llms-part-i-benchmarking-strategies/</link>
+        <pubDate>Sat, 07 Oct 2023 14:45:50 +0530</pubDate>
         
-        <guid>https://anoura12.github.io/blog/p/helm/</guid>
-        <description>&lt;p&gt;What is Helm
-Design Principle
-Scenarios
-Tasks
-Code&lt;/p&gt;
+        <guid>https://anoura12.github.io/blog/p/evaluating-llms-part-i-benchmarking-strategies/</guid>
+        <description>&lt;h1 id=&#34;why-do-we-need-to-evaluate-llms&#34;&gt;Why do we need to evaluate LLMs?&lt;/h1&gt;
+&lt;p&gt;It is a well known fact in the LLM world that evaluating large language models is no easy task. It&amp;rsquo;s something that researchers are still trying to perfect even today. For the end user specifically, creating LLM applications that deliver value is of utmost importance and as developers we need to understand how to measure that value. Josh Tobin, an OpenAI researcher, explains that with the advent of generative AI, anyone can create an MVP within 15 minutes. From then on, a lot of people underestimate the amount of effort required to convert that MVP into a full fledged product. Robust evaluation processes are needed to create reliable production ready LLM systems that are much more than just a simple rudimentary prototype.&lt;/p&gt;
+&lt;h1 id=&#34;why-is-it-so-hard-to-evaluate-llms&#34;&gt;Why is it so hard to evaluate LLMs?&lt;/h1&gt;
+&lt;p&gt;The main issue with evaluating LLM outputs or any kind of generative AI output is that there really isn&amp;rsquo;t any kind of &amp;ldquo;right&amp;rdquo; or &amp;ldquo;wrong&amp;rdquo; answer. Take for example, describing what a Golden Retriever looks like. Objectively yes, there is a baseline requirement for a dog&amp;rsquo;s basic features to be there but an LLM can output two different descriptions of a Golden Retriever which can be accurate. The question here is how would we quantify which of the two descriptions is better? Moreover, with a diverse set of outputs, some cases might be applicable&lt;/p&gt;
+&lt;p&gt;So&amp;hellip; what do we do?&lt;/p&gt;
+&lt;h1 id=&#34;introducing-benchmarking&#34;&gt;Introducing Benchmarking!&lt;/h1&gt;
+&lt;p&gt;Since the beginning of time, we&amp;rsquo;ve evaluated human performance through standardised tests like the SATs or GREs so why can&amp;rsquo;t we employ that for evaluating LLMs? Benchmarking does just that.&lt;/p&gt;
+&lt;p&gt;Benchmarking simply refers to standardised software performance tests.&lt;/p&gt;
 </description>
         </item>
         <item>
