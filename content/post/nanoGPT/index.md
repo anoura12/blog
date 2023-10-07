@@ -331,4 +331,4 @@ unless he has the right to dispose of it."
 "But what of, Miss Bates?"
 ```
 
-This output is much much better and it actually does resemble her writing a lot even though it lacks overall structure to the story. For 10 iterations of finetuning, this isn't bad at all. We can perhaps make this better by increasing the number of iterations in training or increasing batch_size but it might be a but more computationally expensive to do so. Overall, it was a nice experiment and an interesting introduction to training and fientuning models.
+This output is much much better and it actually does resemble her writing a lot even though it lacks overall structure to the story. For 10 iterations of finetuning, this isn't bad at all. We can perhaps make this better by increasing the number of iterations in training or increasing batch_size but it might be a bit more computationally expensive to do so. Overall, it was a nice experiment and an interesting introduction to training and finetuning models.
