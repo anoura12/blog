@@ -5,7 +5,7 @@ image: agathabooks.jpg
 date: 2023-10-04T14:24:06+05:30
 ---
 
-Employing LLMs to do what we want is now possible through prompting and finetuning. For specific downstream tasks, we can finetune the LLM on our own custom dataset to generate the outputs that we want. However, finetuning is computationally expensive requiring GPUs to train these LLMs so most of the times, we can't fientune LLMs using just our computer. 
+Employing LLMs to do what we want is now possible through prompting and finetuning. For specific downstream tasks, we can finetune the LLM on our own custom dataset to generate the outputs that we want. However, finetuning is computationally expensive requiring GPUs to train these LLMs so most of the times, we can't finetune LLMs using just our computer. 
 
 Andrej Karpathy from OpenAI created a simple framework called nanoGPT that enables you to train and finetune medium sized GPTs. It gives you an interesting insight into how a GPT works and allows you to use your custom dataset to train these models. His [video](https://www.youtube.com/watch?v=kCc8FmEb1nY&t=2265s) on building a GPT from scratch, breaks down the concepts of a GPT's architecture and what really goes on under the hood. 
 
